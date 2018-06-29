@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="center">
+  <h1>
+    <u>{{ title }}</u>
+  </h1>
+  <div class="container">
+    <h2>Add Customer</h2>
+    <form class="form-horizontal" href="javascript:void(0)">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="email" placeholder="Enter name" name="email" (input)="updateName($event)">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">City</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="pwd" placeholder="Enter city" name="pwd" (input)="updateCity($event)">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Mobile Number</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="pwd" placeholder="Enter mobile number" name="pwd" (input)="updateMob($event)">
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="button" class="btn btn-default" (click)="addToList()" value="Add" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <h2>Customer information preview</h2>
+</div>
+<div class="preview">
+  <label class="control-label">Name</label> - {{ name }}<br />
+  <label class="control-label">City</label> - {{ city }}<br />
+  <label class="control-label">Mobile Number</label> - {{ mob }}<br />
+</div>
+<div class="center">==========================================================================================================================================</div>
+<div class="center"><h2>Customer List</h2></div>
+
+
+<table class="center table table-bordered">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Mobile Number</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let customer of customers">
+          <td>{{customer.name}}</td>
+          <td>{{customer.city}}</td>
+          <td>{{customer.mob}}</td>
+      </tr>
+  </tbody>
+</table>
