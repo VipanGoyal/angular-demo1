@@ -15,7 +15,6 @@ export class AppComponent {
   mob = ""; 
 
   constructor(){
-    this.customer= new Customer();
     this.customers=[];
   }
 
@@ -30,9 +29,11 @@ export class AppComponent {
   }
 
   addToList(){
+    this.customer = new Customer();
     this.customer.name=this.name;
     this.customer.city=this.city;
     this.customer.mob=this.mob;
     this.customers.push(this.customer);
   }
 }
+
